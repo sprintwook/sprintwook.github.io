@@ -5,7 +5,7 @@ subtitle: CodeIt Sprint Weekly Paper 1st Week
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
-tags: [books, test]
+tags: [#코드잇스프린트, #스프린트프론트엔드6기, #취업까지달린다 ]
 author: Jongwook Lee
 ---
 
