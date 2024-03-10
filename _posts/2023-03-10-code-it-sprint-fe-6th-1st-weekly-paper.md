@@ -13,18 +13,16 @@ author: Jongwook Lee
 
 <br>
 ---
-
 {: .box-note}
 **아래 한 가지 주제에 대해서 각자 조사해서 답변을 제출해 주세요.**<br>
 **CSS의 Cascading에 대해 설명해 주세요.**<br>
 **제출은 위클리 페이퍼 답안 제출 설문에 일요일 23시 59분까지 해주시면 됩니다.**<br>
-
 ---
 
 <br>
 
 ## 조사 내용
-
+---
 #### CSS와 CSS의 Cascading은 무엇인가?
 
 - CSS란, Cascading Style Sheets의 약어로 HTML이나 XML로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어입니다.
@@ -61,13 +59,13 @@ author: Jongwook Lee
         - 일부 사용자는 시각적 불편을 줄이기 위한 목적 등으로 자신만의 스타일시트를 브라우저에 적용할 수 있습니다.
 
   - Origin에 따른 일반적인 CSS 우선 순위는 하기와 같습니다.
-    {: .box-warning}
-    **Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
+      {: .box-warning}
+      **Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
 
   - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.
-    {: .box-warning}
-    **User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
-    
+      {: .box-warning}
+      **User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
+
   - 참조 이미지
     ![](img_01.png)
     ![](img_02.png)
@@ -77,24 +75,24 @@ author: Jongwook Lee
       1. 인라인 스타일(inline 스타일)
         - HTML 요소 내에 직접 적용된 스타일을 의미합니다.
           ~~~
-            <div style="color: red;">This is an inline style.</div>
+          <div style="color: red;">This is an inline style.</div>
           ~~~
         
       2. 내부 스타일(internal/embedded style)
         - HTML 문서 내 `<head>` 섹션의 `<style>` 태그 내에 정의된 스타일을 의미합니다.
           ~~~
-            <style> .example { color: blue; } </style>
+          <style> .example { color: blue; } </style>
           ~~~
         
       3. 외부 스타일(external style)
         - 외부 CSS 파일에 정의된 스타일을 의미합니다.
         - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.
           ~~~
-            <link rel="stylesheet" href="styles.css">
+          <link rel="stylesheet" href="styles.css">
           ~~~
         - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
-          {: .box-warning}
-          **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
+            {: .box-warning}
+            **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
 
   - Specificity 우선순위
     - CSS 선택자의 특정성에 따라 결정됩니다.
