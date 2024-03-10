@@ -65,29 +65,24 @@ author: Jongwook Lee
       **User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)**<br>
 
   - 참조 이미지
-    ![](img_01.png)
-    ![](img_02.png)
+    ![](/assets/img/w1/img_01.png)
+    ![](/assets/img/w1/img_02.png)
 
   - Author Style 우선 순위
     - Author Stylesheet에서 작성할 수 있는 종류는 하기와 같습니다.
       1. 인라인 스타일(inline 스타일)
         - HTML 요소 내에 직접 적용된 스타일을 의미합니다.
-          ```
-          <div style="color: red;">This is an inline style.</div>
-          ```
+          `<div style="color: red;">This is an inline style.</div>`
         
       2. 내부 스타일(internal/embedded style)
         - HTML 문서 내 `<head>` 섹션의 `<style>` 태그 내에 정의된 스타일을 의미합니다.
-          ```
-          <style> .example { color: blue; } </style>
-          ```
+          `<style> .example { color: blue; } </style>`
         
       3. 외부 스타일(external style)
         - 외부 CSS 파일에 정의된 스타일을 의미합니다.
         - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.
-          ```
-          <link rel="stylesheet" href="styles.css">
-          ```
+          `<link rel="stylesheet" href="styles.css">`
+          
         - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
         **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
 
@@ -186,6 +181,8 @@ author: Jongwook Lee
       <p class="contents">my awesome css</p>
       <p class="contents">lets go</p>
       ~~~
+  - 참조 이미지
+    ![](/assets/img/w1/img_03.png)  
 
   <br>
 
