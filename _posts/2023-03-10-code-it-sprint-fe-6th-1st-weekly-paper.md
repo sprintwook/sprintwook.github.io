@@ -58,11 +58,11 @@ author: Jongwook Lee
         - 개발자가 아닌 웹사이트 사용자가 설정하는 스타일시트를 의미합니다.
         - 일부 사용자는 시각적 불편을 줄이기 위한 목적 등으로 자신만의 스타일시트를 브라우저에 적용할 수 있습니다.
 
-    - Origin에 따른 일반적인 CSS 우선 순위는 하기와 같습니다.
-      **Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
+    - Origin에 따른 일반적인 CSS 우선 순위는 하기와 같습니다.<br>
+      **Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)**<br>
 
-    - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.
-      **User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
+    - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.<br>
+      **User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)**<br>
 
   - 참조 이미지
     ![](img_01.png)
@@ -72,24 +72,24 @@ author: Jongwook Lee
     - Author Stylesheet에서 작성할 수 있는 종류는 하기와 같습니다.
       1. 인라인 스타일(inline 스타일)
         - HTML 요소 내에 직접 적용된 스타일을 의미합니다.
-          ~~~
+          ```
           <div style="color: red;">This is an inline style.</div>
-          ~~~
+          ```
         
       2. 내부 스타일(internal/embedded style)
         - HTML 문서 내 `<head>` 섹션의 `<style>` 태그 내에 정의된 스타일을 의미합니다.
-          ~~~
+          ```
           <style> .example { color: blue; } </style>
-          ~~~
+          ```
         
       3. 외부 스타일(external style)
         - 외부 CSS 파일에 정의된 스타일을 의미합니다.
         - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.
-          ~~~
+          ```
           <link rel="stylesheet" href="styles.css">
-          ~~~
+          ```
         - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
-          **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
+        **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
 
 
   - Specificity 우선순위
@@ -115,7 +115,6 @@ author: Jongwook Lee
     - id 카테고리 > class 카테고리 > type 카테고리 (왼쪽 기준으로 우선 순위가 높음)
     - 위의 카테고리에 의거하여 최종 우선 순위는 카테고리별 점수가 결합하여 결정됩니다.
     - MDN 문서의 설명에는 0-0-0와 같은 형식으로 점수를 부여합니다.
-
       ~~~
       #id {
         color: blue; /_ category 1. 1-0-0 _/
@@ -134,7 +133,6 @@ author: Jongwook Lee
       <p id="id" class="class">👋 Hello World!</p>
       ~~~
       
-
   - 작성 순서에 따른 우선 순위 - 아래에 있을수록 우선 순위는 높아집니다.
       ~~~
       .class {
