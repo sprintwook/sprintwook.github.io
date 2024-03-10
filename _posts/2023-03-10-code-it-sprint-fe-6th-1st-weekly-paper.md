@@ -64,7 +64,7 @@ author: Jongwook Lee
 
     - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.<br>
       **User Agent Stylesheet > User Stylesheet > Author Stylesheet**<br>
-      **(왼쪽 기준으로 우선 순위가 높음)**<br>
+      **(왼쪽 기준으로 우선 순위가 높음)**<br><br>
 
   - 참조 이미지
     ![](/assets/img/w1/img_01.png)
@@ -129,7 +129,7 @@ author: Jongwook Lee
       
       ~~~
       <p id="id" class="class">👋 Hello World!</p>
-      ~~~<br>
+      ~~~
       
   - 작성 순서에 따른 우선 순위 - 아래에 있을수록 우선 순위는 높아집니다.
       ~~~
@@ -184,7 +184,7 @@ author: Jongwook Lee
       <p class="contents"> this is css</p>
       <p class="contents">my awesome css</p>
       <p class="contents">lets go</p>
-      ~~~<br>
+      ~~~
   - 참조 이미지
     ![](/assets/img/w1/img_03.png)  
 
