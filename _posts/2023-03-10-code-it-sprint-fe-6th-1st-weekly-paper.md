@@ -71,19 +71,19 @@ author: Jongwook Lee
   - Author Style 우선 순위
     - Author Stylesheet에서 작성할 수 있는 종류는 하기와 같습니다.
       1. 인라인 스타일(inline 스타일)
-        - HTML 요소 내에 직접 적용된 스타일을 의미합니다.
-          `<div style="color: red;">This is an inline style.</div>`
+        - HTML 요소 내에 직접 적용된 스타일을 의미합니다.<br>
+        `<div style="color: red;">This is an inline style.</div>`
         
       2. 내부 스타일(internal/embedded style)
-        - HTML 문서 내 `<head>` 섹션의 `<style>` 태그 내에 정의된 스타일을 의미합니다.
+        - HTML 문서 내 `<head>` 섹션의 `<style>` 태그 내에 정의된 스타일을 의미합니다.<br>
           `<style> .example { color: blue; } </style>`
         
       3. 외부 스타일(external style)
         - 외부 CSS 파일에 정의된 스타일을 의미합니다.
-        - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.
+        - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.<br>
           `<link rel="stylesheet" href="styles.css">`
           
-        - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
+        - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.<br>
         **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
 
 
