@@ -44,106 +44,106 @@ author: Jongwook Lee
 ### CSS에서의 우선 순위 결정 기준
 
 - CSS에서 우선 순위를 결정하는 기준은 하기와 같습니다.
-
   - Origin 우선 순위
-
     - Origin은 어떤 원천으로부터 적용되었는지, CSS 규칙이 어디서 왔는지를 말합니다. (쉽게 말하면, CSS 스타일 제공 주체)
       1.  User-Agent Stylesheet
-      - 사용자 에이전트나 브라우저에 기본적으로 내장된 스타일시트를 의미합니다.
-      - 브라우저마다 기본 스타일이 조금씩 다르므로, 퍼블리싱을 할 때 noramlize.css나 reset.css처럼 공통 속성을 재정의하는 CSS를 작성합니다.
-      - 예시로 <h1> 태그는 기본적으로 크고 굵게 표시되는 것을 예시로 들 수 있습니다.
+        - 사용자 에이전트나 브라우저에 기본적으로 내장된 스타일시트를 의미합니다.
+        - 브라우저마다 기본 스타일이 조금씩 다르므로, 퍼블리싱을 할 때 noramlize.css나 reset.css처럼 공통 속성을 재정의하는 CSS를 작성합니다.
+        - 예시로 <h1> 태그는 기본적으로 크고 굵게 표시되는 것을 예시로 들 수 있습니다.
 
-    2. Author Stylesheet
-       - 가장 일반적인 유형의 CSS로 웹 개발자가 작성한 스타일 시트를 의미합니다.
-       - link로 import하여 사용하거나, <style> 블록에서 사용하거나, 인라인 스타일로 작성된 스타일시트를 모두 포함합니다.
-       - 개발자가 웹사이트에서 <h1>태그에 color:blue 속성을 지정해놓았다면 해당 사이트에서 <h1>태그의 색상은 파란색으로 표시됩니다.
-    3. User Stylesheet
-       - 개발자가 아닌 웹사이트 사용자가 설정하는 스타일시트를 의미합니다.
-       - 일부 사용자는 시각적 불편을 줄이기 위한 목적 등으로 자신만의 스타일시트를 브라우저에 적용할 수 있습니다.
+      2. Author Stylesheet
+        - 가장 일반적인 유형의 CSS로 웹 개발자가 작성한 스타일 시트를 의미합니다.
+        - link로 import하여 사용하거나, <style> 블록에서 사용하거나, 인라인 스타일로 작성된 스타일시트를 모두 포함합니다.
+        - 개발자가 웹사이트에서 <h1>태그에 color:blue 속성을 지정해놓았다면 해당 사이트에서 <h1>태그의 색상은 파란색으로 표시됩니다.
+      3. User Stylesheet
+        - 개발자가 아닌 웹사이트 사용자가 설정하는 스타일시트를 의미합니다.
+        - 일부 사용자는 시각적 불편을 줄이기 위한 목적 등으로 자신만의 스타일시트를 브라우저에 적용할 수 있습니다.
 
   - Origin에 따른 일반적인 CSS 우선 순위는 하기와 같습니다.
-    - Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)
+      - Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)
   - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.
-
     - User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)
     - 참조 이미지
       ![](img_01.png)
       ![](img_02.png)
 
   - Author Style 우선 순위
-
     - Author Stylesheet에서 작성할 수 있는 종류는 하기와 같습니다.
       1. 인라인 스타일(inline 스타일)
       - HTML 요소 내에 직접 적용된 스타일을 의미합니다.
-        {% highlight javascript linenos %}
-        <div style="color: red;">This is an inline style.</div>
-        {% endhighlight %}
+
+          ~~~
+            <div style="color: red;">This is an inline style.</div>
+          ~~~
+
       2. 내부 스타일(internal/embedded style)
       - HTML 문서 내 `<head>` 섹션의 `<style>` 태그 내에 정의된 스타일을 의미합니다.
-        {% highlight javascript linenos %}
-        <style> .example { color: blue; } </style>
-        {% endhighlight %}
+
+          ~~~
+          <style> .example { color: blue; } </style>
+          ~~~
+
       3. 외부 스타일(external style)
-      - 외부 CSS 파일에 정의된 스타일을 의미합니다.
-      - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.
-        {% highlight javascript linenos %}
-        <link rel="stylesheet" href="styles.css">
-        {% endhighlight %}
-      - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
-      - 인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)
+        - 외부 CSS 파일에 정의된 스타일을 의미합니다.
+        - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.
+            ~~~
+            <link rel="stylesheet" href="styles.css">
+            ~~~
+        - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
+        - 인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)
 
   - Specificity 우선순위
-
     - CSS 선택자의 특정성에 따라 결정됩니다.
-
       1. id 카테고리
          - id 선택자 (#id)
       2. class 카테고리
          - class 선택자 (.class)
-         - 속성 선택자 ([type="text"], [title|="first"])
-         - 의사 클래스 (:hover, checked, :nth-child(2n))
+         - 속성 선택자 (`[type="text"]`, `[title|="first"]`)
+         - 의사 클래스 (`:hover`, `checked`, `:nth-child(2n)`)
       3. type 카테고리
-         - HTML 요소 선택자 (p, h1, span)
-         - 의사요소 (::before, ::placeholder)
+         - HTML 요소 선택자 (`p`, `h1`, `span`)
+         - 의사요소 (`::before`, `::placeholder`)
       4. 우선 순위에 영향을 미치지 않는 것들
          - 하기 선택자들은 스타일에 적용되지만 Casading 우선 순위에는 영향을 미치지 않습니다.
-           - 전체 선택자 (\* : Asterisk)
-           - :where() 의사 클래스
+           - 전체 선택자 (`*` : Asterisk)
+           - `:where()` 의사 클래스
 
     - Specificity 우선 순위는 하기와 같습니다.
     - id 카테고리 > class 카테고리 > type 카테고리 (왼쪽 기준으로 우선 순위가 높음)
     - 위의 카테고리에 의거하여 최종 우선 순위는 카테고리별 점수가 결합하여 결정됩니다.
     - MDN 문서의 설명에는 0-0-0와 같은 형식으로 점수를 부여합니다.
 
-    {% highlight javascript linenos %}
-    #id {
-     color: blue; /* category 1. 1-0-0 */
-    }
-    .class {
-    	color: yellow; /* category 2. 0-1-0 */
-    }
-    p {
-    	color: red; /* category 3. 0-0-1 */
-    }
-    * {
-    	color: gray; /* category 4. 0-0-0 */
-    }
-    {% endhighlight %}
+        ~~~
+        #id {
+        color: blue; /_ category 1. 1-0-0 _/
+        }
+        .class {
+        color: yellow; /_ category 2. 0-1-0 _/
+        }
+        p {
+        color: red; /_ category 3. 0-0-1 _/
+        }
+        * {
+          color: gray; /_ category 4. 0-0-0 _/
+        }
+        ~~~
 
-    {% highlight javascript linenos %}
-    <p id="id" class="class">👋 Hello World!</p>
-    {% endhighlight %}
+        ~~~
+        <p id="id" class="class">👋 Hello World!</p>
+        ~~~
 
   - 작성 순서에 따른 우선 순위 - 아래에 있을수록 우선 순위는 높아집니다.
-    {% highlight javascript linenos %}
+
+    ~~~
     .class {
-      font-size: 12px;
-      font-weight: 700;
-      font-family: Pretendard;
-      color: blue;
-      color: red; /* 나중에 작성된 red color가 적용됨 */
+    font-size: 12px;
+    font-weight: 700;
+    font-family: Pretendard;
+    color: blue;
+    color: red; /_ 나중에 작성된 red color가 적용됨 _/
     }
-    {% endhighlight %}
+    ~~~
+
     <br>
 
   ### 결론
@@ -163,29 +163,28 @@ author: Jongwook Lee
     - 같은 요소에 동일한 속성이 선언되었을 경우, 나중에 선언된 스타일이 최종적으로 적용됩니다.
   - !important 속성이 적용된 스타일은 가장 우선 순위가 높습니다.
   - 이 때, !important 속성은 우선 순위를 최상위로 변경하므로 많이 사용할수록 디버깅을 복잡하게 만들어 코드의 유지보수를 어렵게 할 수 있으므로 지양하는 것을 권장합니다.
+        ~~~
+        #hello {
+        color: blue;
+        font-size: 50px;
+        }
+        p.contents {
+        color: gray;
+        font-size: 20px;
+        background-color: pink;
+        }
 
-  {% highlight javascript linenos %}
-  #hello {
-    color: blue;
-    font-size: 50px;
-  }
-  p.contents {
-    color: gray;
-    font-size: 20px;
-    background-color: pink;
-  }
+        .highlight {
+        background-color: yellow;
+        }
+        ~~~
 
-  .highlight {
-    background-color: yellow;
-  }
-  {% endhighlight %}
-
-  {% highlight javascript linenos %}
-  <p class="contents" id="hello">hello</p>
-  <p class="contents"> this is css</p>
-  <p class="contents">my awesome css</p>
-  <p class="contents">lets go</p>
-  {% endhighlight %}
+        ~~~
+        <p class="contents" id="hello">hello</p>
+        <p class="contents"> this is css</p>
+        <p class="contents">my awesome css</p>
+        <p class="contents">lets go</p>
+        ~~~
 
 ### W3에서의 정의 내용
 
@@ -194,12 +193,8 @@ author: Jongwook Lee
 
 # 참조
 
-| Features      | Links          |
-| :------------ | :------------- |
-| W3 공식 문서  | [:link:][ref1] |
-| 참조 블로그 1 | [:link:][ref2] |
-| 참조 블로그 2 | [:link:][ref3] |
-
-[ref1](https://www.w3.org/TR/css-cascade-5/#cascading)
-[ref2](https://makinghome.tistory.com/67)
-[ref3](https://ttaerrim.tistory.com/60)
+| Features      | Links                                                  |
+| :------------ | :----------------------------------------------------- |
+| W3 공식 문서  | [ref1](https://www.w3.org/TR/css-cascade-5/#cascading) |
+| 참조 블로그 1 | [ref2](https://makinghome.tistory.com/67)              |
+| 참조 블로그 2 | [ref3](https://ttaerrim.tistory.com/60)                |
