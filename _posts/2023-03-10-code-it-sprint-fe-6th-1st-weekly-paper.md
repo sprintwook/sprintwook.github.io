@@ -59,10 +59,12 @@ author: Jongwook Lee
         - 일부 사용자는 시각적 불편을 줄이기 위한 목적 등으로 자신만의 스타일시트를 브라우저에 적용할 수 있습니다.
 
     - Origin에 따른 일반적인 CSS 우선 순위는 하기와 같습니다.<br>
-      **Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)**<br>
+      **Author Stylesheet > User Stylesheet > User Agent Stylesheet**<br>
+      **(왼쪽 기준으로 우선 순위가 높음)**<br>
 
     - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.<br>
-      **User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)**<br>
+      **User Agent Stylesheet > User Stylesheet > Author Stylesheet**<br>
+      **(왼쪽 기준으로 우선 순위가 높음)**<br>
 
   - 참조 이미지
     ![](/assets/img/w1/img_01.png)
@@ -84,7 +86,8 @@ author: Jongwook Lee
           `<link rel="stylesheet" href="styles.css">`
           
         - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.<br>
-        **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
+        **인라인 스타일 > 내부 스타일 > 외부 스타일**<br>
+        **(왼쪽 기준으로 우선 순위가 높음)**<br>
 
 
   - Specificity 우선순위
@@ -104,7 +107,7 @@ author: Jongwook Lee
       4. 우선 순위에 영향을 미치지 않는 것들
          - 하기 선택자들은 스타일에 적용되지만 Casading 우선 순위에는 영향을 미치지 않습니다.
            - 전체 선택자 (`*` : Asterisk)
-           - `:where()` 의사 클래스
+           - `:where()` 의사 클래스<br>
 
     - Specificity 우선 순위는 하기와 같습니다.
     - id 카테고리 > class 카테고리 > type 카테고리 (왼쪽 기준으로 우선 순위가 높음)
@@ -126,7 +129,7 @@ author: Jongwook Lee
       
       ~~~
       <p id="id" class="class">👋 Hello World!</p>
-      ~~~
+      ~~~<br>
       
   - 작성 순서에 따른 우선 순위 - 아래에 있을수록 우선 순위는 높아집니다.
       ~~~
@@ -149,13 +152,14 @@ author: Jongwook Lee
   - 캐스캐이딩의 과정은 하기와 같은 진행됩니다.
     1.  스타일 규칙과 요소가 매치되었는지를 검사하여 해당 요소와 관련된 스타일 속성만 선별합니다.
     2.  Origin 및 !import 속성에 따른 우선 순위를 비교합니다.
-      - User Agent vs. Author vs. User Stylesheet 간 우선 순위를 판단합니다. (이 때, Important 속성 사용 여부에 따라 우선 순위가 달라질 수 있습니다.)
+      - User Agent vs. Author vs. User Stylesheet 간 우선 순위를 판단합니다.<br> 
+        (!important 속성 사용 여부에 따라 우선 순위가 달라질 수 있습니다.)
     3.  Author Style 우선 순위에 따른 우선 순위를 비교합니다.
       - 인라인 -> 내부 -> 외부 간의 우선 순위를 판단합니다.
     4.  Specification 우선 순위
-      - #id -> .class -> type 카테고리 순으로 우선 순위를 판단합니다.
+      - `#id` -> `.class` -> `type` 카테고리 순으로 우선 순위를 판단합니다.
       - 작성 순서에 따라 판단합니다.
-      - 같은 요소에 동일한 속성이 선언되었을 경우, 나중에 선언된 스타일이 최종적으로 적용됩니다.
+      - 같은 요소에 동일한 속성이 선언되었을 경우, 나중에 선언된 스타일이 최종적으로 적용됩니다.<br>
   - !important 속성이 적용된 스타일은 가장 우선 순위가 높습니다.
   - 이 때, !important 속성은 우선 순위를 최상위로 변경하므로 많이 사용할수록 디버깅을 복잡하게 만들어 코드의 유지보수를 어렵게 할 수 있으므로 지양하는 것을 권장합니다.
 
@@ -180,7 +184,7 @@ author: Jongwook Lee
       <p class="contents"> this is css</p>
       <p class="contents">my awesome css</p>
       <p class="contents">lets go</p>
-      ~~~
+      ~~~<br>
   - 참조 이미지
     ![](/assets/img/w1/img_03.png)  
 
@@ -188,7 +192,8 @@ author: Jongwook Lee
 
   #### 4. W3에서의 정의 내용
 
-  - CSS Cascade란 다른 소스들로부터 발생될 수 있는 적절한 값을 User-Agent (브라우저)가 혼합할 지 알려주는 알고리즘입니다.
+  - CSS Cascade란 다른 소스들로부터 발생될 수 있는 적절한 값을 <br>
+      User-Agent (브라우저)가 혼합할 지 알려주는 알고리즘입니다.
     - Cascade는 순서 없이 주어진 HTML 요소나 주어진 속성들이 선언된 값들을 특정한 조건과 Cascade된 값을 통해 우선 순위를 결정하여 정렬합니다.
 
   <br>
