@@ -10,6 +10,8 @@ author: Jongwook Lee
 ---
 
 # 1주차 위클리 과제 안내
+
+<br>
 ---
 
 {: .box-note}
@@ -38,84 +40,76 @@ author: Jongwook Lee
     - 하지만 현재에는 대부분의 브라우저들이 크롬 기반의 블링크 엔진을 사용하므로 그럴 필요성이 적어졌습니다.
     - 최근에는 접속한 기기의 정보나 OS를 구분하는 데에 많이 사용하고 있습니다.
 - 결론적으로, CSS는 여러 곳에서 중복으로 작성할 수 있기 때문에 실제로 어떤 스타일이 적용되는지는 우선 순위에 따라 결정될 수 있습니다.
-  <br>
+  
+<br>
 
 #### CSS에서의 우선 순위 결정 기준
 
 - CSS에서 우선 순위를 결정하는 기준은 하기와 같습니다.
-
   - Origin 우선 순위
-
     - Origin은 어떤 원천으로부터 적용되었는지, CSS 규칙이 어디서 왔는지를 말합니다. (쉽게 말하면, CSS 스타일 제공 주체)
-
       1.  User-Agent Stylesheet
-
-      - 사용자 에이전트나 브라우저에 기본적으로 내장된 스타일시트를 의미합니다.
-      - 브라우저마다 기본 스타일이 조금씩 다르므로, 퍼블리싱을 할 때 noramlize.css나 reset.css처럼 공통 속성을 재정의하는 CSS를 작성합니다.
-      - 예시로 <h1> 태그는 기본적으로 크고 굵게 표시되는 것을 예시로 들 수 있습니다.
-
+        - 사용자 에이전트나 브라우저에 기본적으로 내장된 스타일시트를 의미합니다.
+        - 브라우저마다 기본 스타일이 조금씩 다르므로, 퍼블리싱을 할 때 noramlize.css나 reset.css처럼 공통 속성을 재정의하는 CSS를 작성합니다.
+        - 예시로 <h1> 태그는 기본적으로 크고 굵게 표시되는 것을 예시로 들 수 있습니다.
       2. Author Stylesheet
-
-      - 가장 일반적인 유형의 CSS로 웹 개발자가 작성한 스타일 시트를 의미합니다.
-      - link로 import하여 사용하거나, <style> 블록에서 사용하거나, 인라인 스타일로 작성된 스타일시트를 모두 포함합니다.
-      - 개발자가 웹사이트에서 <h1>태그에 color:blue 속성을 지정해놓았다면 해당 사이트에서 <h1>태그의 색상은 파란색으로 표시됩니다.
-
+        - 가장 일반적인 유형의 CSS로 웹 개발자가 작성한 스타일 시트를 의미합니다.
+        - link로 import하여 사용하거나, <style> 블록에서 사용하거나, 인라인 스타일로 작성된 스타일시트를 모두 포함합니다.
+        - 개발자가 웹사이트에서 <h1>태그에 color:blue 속성을 지정해놓았다면 해당 사이트에서 <h1>태그의 색상은 파란색으로 표시됩니다.
       3. User Stylesheet
-
-      - 개발자가 아닌 웹사이트 사용자가 설정하는 스타일시트를 의미합니다.
-      - 일부 사용자는 시각적 불편을 줄이기 위한 목적 등으로 자신만의 스타일시트를 브라우저에 적용할 수 있습니다.
+        - 개발자가 아닌 웹사이트 사용자가 설정하는 스타일시트를 의미합니다.
+        - 일부 사용자는 시각적 불편을 줄이기 위한 목적 등으로 자신만의 스타일시트를 브라우저에 적용할 수 있습니다.
 
   - Origin에 따른 일반적인 CSS 우선 순위는 하기와 같습니다.
     {: .box-warning}
-    Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)
+    **Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
+
   - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.
     {: .box-warning}
-    User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)
-    - 참조 이미지
-      ![](img_01.png)
-      ![](img_02.png)
+    **User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
+    
+  - 참조 이미지
+    ![](img_01.png)
+    ![](img_02.png)
 
   - Author Style 우선 순위
-
     - Author Stylesheet에서 작성할 수 있는 종류는 하기와 같습니다.
-
       1. 인라인 스타일(inline 스타일)
-
-      - HTML 요소 내에 직접 적용된 스타일을 의미합니다.
-        ~~~
-          <div style="color: red;">This is an inline style.</div>
-        ~~~
-        <br>
+        - HTML 요소 내에 직접 적용된 스타일을 의미합니다.
+          ~~~
+            <div style="color: red;">This is an inline style.</div>
+          ~~~
+        
       2. 내부 스타일(internal/embedded style)
-      - HTML 문서 내 `<head>` 섹션의 `<style>` 태그 내에 정의된 스타일을 의미합니다.
-        ~~~
-          <style> .example { color: blue; } </style>
-        ~~~
-        <br>
+        - HTML 문서 내 `<head>` 섹션의 `<style>` 태그 내에 정의된 스타일을 의미합니다.
+          ~~~
+            <style> .example { color: blue; } </style>
+          ~~~
+        
       3. 외부 스타일(external style)
-
-      - 외부 CSS 파일에 정의된 스타일을 의미합니다.
-      - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.
+        - 외부 CSS 파일에 정의된 스타일을 의미합니다.
+        - HTML 문서에서는 `<link>` 태그를 사용하여 외부 스타일 시트를 사용가능합니다.
           ~~~
-          <link rel="stylesheet" href="styles.css">
+            <link rel="stylesheet" href="styles.css">
           ~~~
-      - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
-        {: .box-warning}
-        인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)
+        - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
+          {: .box-warning}
+          **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
 
   - Specificity 우선순위
-
     - CSS 선택자의 특정성에 따라 결정됩니다.
-
       1. id 카테고리
          - id 선택자 (#id)
+
       2. class 카테고리
          - class 선택자 (.class)
          - 속성 선택자 (`[type="text"]`, `[title|="first"]`)
          - 의사 클래스 (`:hover`, `checked`, `:nth-child(2n)`)
+
       3. type 카테고리
          - HTML 요소 선택자 (`p`, `h1`, `span`)
          - 의사요소 (`::before`, `::placeholder`)
+
       4. 우선 순위에 영향을 미치지 않는 것들
          - 하기 선택자들은 스타일에 적용되지만 Casading 우선 순위에는 영향을 미치지 않습니다.
            - 전체 선택자 (`*` : Asterisk)
@@ -125,6 +119,7 @@ author: Jongwook Lee
     - id 카테고리 > class 카테고리 > type 카테고리 (왼쪽 기준으로 우선 순위가 높음)
     - 위의 카테고리에 의거하여 최종 우선 순위는 카테고리별 점수가 결합하여 결정됩니다.
     - MDN 문서의 설명에는 0-0-0와 같은 형식으로 점수를 부여합니다.
+
       ~~~
       #id {
         color: blue; /_ category 1. 1-0-0 _/
@@ -138,11 +133,11 @@ author: Jongwook Lee
         color: gray; /_ category 4. 0-0-0 _/
       }
       ~~~
-      <br>
+      
       ~~~
       <p id="id" class="class">👋 Hello World!</p>
       ~~~
-      <br>
+      
 
   - 작성 순서에 따른 우선 순위 - 아래에 있을수록 우선 순위는 높아집니다.
       ~~~
@@ -155,25 +150,26 @@ author: Jongwook Lee
       }
       ~~~
 
-      <br>
-
+      
+  <br>
+  
   #### 결론
 
   - 결과적으로 CSS는 스타일을 적용하는 과정에서 Casading 알고리즘을 사용하여 스타일 규칙의 우선 순위를 결정합니다.
   - 우선 순위를 판단하는 기준은 Origin, Specification, 스타일 적용 방법 등을 고려하여 우선 순위를 결정합니다.
-
   - 캐스캐이딩의 과정은 하기와 같은 진행됩니다.
     1.  스타일 규칙과 요소가 매치되었는지를 검사하여 해당 요소와 관련된 스타일 속성만 선별합니다.
     2.  Origin 및 !import 속성에 따른 우선 순위를 비교합니다.
-    - User Agent vs. Author vs. User Stylesheet 간 우선 순위를 판단합니다. (이 때, Important 속성 사용 여부에 따라 우선 순위가 달라질 수 있습니다.)
+      - User Agent vs. Author vs. User Stylesheet 간 우선 순위를 판단합니다. (이 때, Important 속성 사용 여부에 따라 우선 순위가 달라질 수 있습니다.)
     3.  Author Style 우선 순위에 따른 우선 순위를 비교합니다.
-    - 인라인 -> 내부 -> 외부 간의 우선 순위를 판단합니다.
+      - 인라인 -> 내부 -> 외부 간의 우선 순위를 판단합니다.
     4.  Specification 우선 순위
-    - #id -> .class -> type 카테고리 순으로 우선 순위를 판단합니다.
-    - 작성 순서에 따라 판단합니다.
-    - 같은 요소에 동일한 속성이 선언되었을 경우, 나중에 선언된 스타일이 최종적으로 적용됩니다.
+      - #id -> .class -> type 카테고리 순으로 우선 순위를 판단합니다.
+      - 작성 순서에 따라 판단합니다.
+      - 같은 요소에 동일한 속성이 선언되었을 경우, 나중에 선언된 스타일이 최종적으로 적용됩니다.
   - !important 속성이 적용된 스타일은 가장 우선 순위가 높습니다.
   - 이 때, !important 속성은 우선 순위를 최상위로 변경하므로 많이 사용할수록 디버깅을 복잡하게 만들어 코드의 유지보수를 어렵게 할 수 있으므로 지양하는 것을 권장합니다.
+
       ~~~
       #hello {
       color: blue;
