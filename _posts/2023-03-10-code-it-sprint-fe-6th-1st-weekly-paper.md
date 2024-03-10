@@ -12,18 +12,18 @@ author: Jongwook Lee
 # 1주차 위클리 과제 안내
 
 <br>
----
+
 {: .box-note}
 **아래 한 가지 주제에 대해서 각자 조사해서 답변을 제출해 주세요.**<br>
 **CSS의 Cascading에 대해 설명해 주세요.**<br>
 **제출은 위클리 페이퍼 답안 제출 설문에 일요일 23시 59분까지 해주시면 됩니다.**<br>
----
+
 
 <br>
 
 ## 조사 내용
----
-#### CSS와 CSS의 Cascading은 무엇인가?
+
+#### 1. CSS와 CSS의 Cascading은 무엇인가?
 
 - CSS란, Cascading Style Sheets의 약어로 HTML이나 XML로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어입니다.
 - 주로 웹 페이지의 디자인과 레이아웃을 정의하여 사용자들에게 시각적인 디자인을 제공하기 위해 필수적입니다.
@@ -41,7 +41,7 @@ author: Jongwook Lee
   
 <br>
 
-#### CSS에서의 우선 순위 결정 기준
+#### 2. CSS에서의 우선 순위 결정 기준
 
 - CSS에서 우선 순위를 결정하는 기준은 하기와 같습니다.
   - Origin 우선 순위
@@ -58,12 +58,10 @@ author: Jongwook Lee
         - 개발자가 아닌 웹사이트 사용자가 설정하는 스타일시트를 의미합니다.
         - 일부 사용자는 시각적 불편을 줄이기 위한 목적 등으로 자신만의 스타일시트를 브라우저에 적용할 수 있습니다.
 
-  - Origin에 따른 일반적인 CSS 우선 순위는 하기와 같습니다.
-      {: .box-warning}
+    - Origin에 따른 일반적인 CSS 우선 순위는 하기와 같습니다.
       **Author Stylesheet > User Stylesheet > User Agent Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
 
-  - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.
-      {: .box-warning}
+    - 만일 !important가 포함된 속성이라면 우선 순위는 하기와 같아집니다.
       **User Agent Stylesheet > User Stylesheet > Author Stylesheet (왼쪽 기준으로 우선 순위가 높음)**
 
   - 참조 이미지
@@ -91,16 +89,16 @@ author: Jongwook Lee
           <link rel="stylesheet" href="styles.css">
           ~~~
         - Author Style 적용 방식에서의 우선 순위는 하기와 같습니다.
-            {: .box-warning}
-            **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
+          **인라인 스타일 > 내부 스타일 > 외부 스타일 (왼쪽 기준으로 우선 순위가 높음)**
+
 
   - Specificity 우선순위
     - CSS 선택자의 특정성에 따라 결정됩니다.
       1. id 카테고리
-         - id 선택자 (#id)
+         - id 선택자 (`#id`)
 
       2. class 카테고리
-         - class 선택자 (.class)
+         - class 선택자 (`.class`)
          - 속성 선택자 (`[type="text"]`, `[title|="first"]`)
          - 의사 클래스 (`:hover`, `checked`, `:nth-child(2n)`)
 
@@ -151,7 +149,7 @@ author: Jongwook Lee
       
   <br>
   
-  #### 결론
+  #### 3. 결론
 
   - 결과적으로 CSS는 스타일을 적용하는 과정에서 Casading 알고리즘을 사용하여 스타일 규칙의 우선 순위를 결정합니다.
   - 우선 순위를 판단하는 기준은 Origin, Specification, 스타일 적용 방법 등을 고려하여 우선 순위를 결정합니다.
@@ -200,10 +198,10 @@ author: Jongwook Lee
 
   <br>
 
-  #### 참조
+  #### 4. 참조
 
   | Features      | Links                                                  |
   | :------------ | :----------------------------------------------------- |
-  | W3 공식 문서  | [ref1](https://www.w3.org/TR/css-cascade-5/#cascading) |
-  | 참조 블로그 1 | [ref2](https://makinghome.tistory.com/67)              |
-  | 참조 블로그 2 | [ref3](https://ttaerrim.tistory.com/60)                |
+  | W3 공식 문서  | [링크로 이동](https://www.w3.org/TR/css-cascade-5/#cascading) |
+  | 참조 블로그 1 | [링크로 이동](https://makinghome.tistory.com/67)              |
+  | 참조 블로그 2 | [링크로 이동](https://ttaerrim.tistory.com/60)                |
