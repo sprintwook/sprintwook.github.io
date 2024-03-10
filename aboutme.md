@@ -1,16 +1,16 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Please Ask to me that can I learn about knowledge with IT
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Jong wook Lee. I have the following qualities:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- I like to drink coffee.
+- If you want to meet me, message to my discord
 
 What else do you need?
 
 ### My story
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I worked in IT Manager in corporation. But there is not exist any develop that I quited to corporation. I want to develop ***my website service***.
