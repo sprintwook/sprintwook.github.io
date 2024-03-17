@@ -12,7 +12,9 @@ author: Jongwook Lee
 # 3주차 위클리 과제 안내
 
 <br>
-{: .box-note}**Git에서 branch merge 방법들과 각 방법의 특징을 설명해 주세요.**<br>
+
+{: .box-note}
+**Git에서 branch merge 방법들과 각 방법의 특징을 설명해 주세요.**<br>
 **Git Flow 브랜치 전략에 대해 설명해 주세요.**<br>
 **제출은 위클리 페이퍼 답안 제출 설문에 일요일 23시 59분까지 해주시면 됩니다.**<br>
 
