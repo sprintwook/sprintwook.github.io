@@ -158,7 +158,9 @@ author: Jongwook Lee
 #### 2. Git Flow 브랜치 전략에 대해 설명해 주세요.
 - Git Flow에는 5가지 종류의 브랜치가 존재함
 	- 항상 유지되는 메인 브랜치들(master, develop)과 일정 기간 동안만 유지되는 보조 브랜치들(feature, release, hotfix)가 있음
+	
 - Git Flow 브랜치의 종류
+
   | 브랜치명      | 설명                                                  |
   | :------------ | :----------------------------------------------------- |
   | `master` | 제품으로 출시될 수 있는 브랜치 |
@@ -184,6 +186,7 @@ author: Jongwook Lee
 <br>	
 
 #### 3. 참조
+
   | Features      | Links                                                  |
   | :------------ | :----------------------------------------------------- |
   | Atlassian 공식 문서  | [링크로 이동](https://www.atlassian.com/ko/git/tutorials/using-branches/git-merge)|
