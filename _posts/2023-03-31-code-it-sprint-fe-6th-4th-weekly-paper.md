@@ -31,6 +31,7 @@ author: Jongwook Lee
 		- 원시 값은 새로운 메모리 공간에 독립적인 값을 저장하므로, 깊은 복사가 수행된다.
 		- 참조 값은 얕은 복사로 수행된다. 
 		- 원시 값과 참조 값의 큰 차이점은 원본이 바뀌면 참조 값은 복사본도 같이 변경되나, 원시 값은 변경되지 않는다.
+		
 		```
 		// 원시 타입의 깊은 복사
 		let a = '원본 데이터';
@@ -66,6 +67,7 @@ author: Jongwook Lee
 	- 자바스크립트 내에서 모든 표준 내장 객체의 복사 작업은 깊은 복사가 아닌 얕은 복사본을 생성한다.
 		- Array.prototype.concat()
 		- Array.prototype.slice()
+		
 		```
 		const original = ['a',2,true,4,"hi"];
 		const copy = original.slice();
@@ -79,7 +81,9 @@ author: Jongwook Lee
 		console.log(original); // [ 'a', 2, true, 4, 'hi' ]
 		console.log(copy); // [ 'a', 2, true, 4, 'hi', 10 ]
 		```
+		
 		- Spread Syntax (전개 구문)
+		
 		```
 		const obj = { a: 1 };
 		const newObj = Object.assign({}, obj);
@@ -89,8 +93,10 @@ author: Jongwook Lee
 		console.log(obj); // { a: 1 }
 		console.log(obj === newObj); // false
 		```
+		
 		- Array.From()
 		- Object.assign()
+		
 		```
 		const obj = { a: 1 };
 		const newObj = Object.assign({}, obj);
@@ -100,6 +106,7 @@ author: Jongwook Lee
 		console.log(obj); // { a: 1 }
 		console.log(obj === newObj); // false
 		```
+		
 		- Object.create()
 		
 - 깊은 복사 : 배열을 포함한 객체의 복사본의 속성이 복사본이 만들어진 원본 객체와 같은 참조를 공유하지 않는 복사
@@ -116,6 +123,7 @@ author: Jongwook Lee
 	- 깊은 복사를 수행하는 방법은 직렬화로, JSON.stringify()를 사용하여 객체를 JSON 문자열로 변환하고, JSON.parse()를 통해 문자열을 완전히 새로운 객체로 만드는 방법이 있다.
 		- 또 다른 방법으로는 객체의 깊이만큼 얕은 복사를 수행하면 된다. 
 		- 많은 Javascript 객체는 직렬화가 불가능한 경우도 존재한다. 대표적으로 함수(클로저 포함), 심볼, HTML DOM API 내 HTML 요소를 나타내는 객체, 재귀 데이터 등이 존재한다.
+		
 		```
 		const obj = {
 			a: 1,
@@ -131,12 +139,14 @@ author: Jongwook Lee
 		console.log(obj); // { a: 1, b: { c: 2 } }
 		console.log(obj.b.c === newObj.b.c); // false
 		```
+		
 	- 깊은 복사는 원본 객체와 참조를 공유하지 않기 때문에 깊은 복사본에 어떠한 변경이 있더라도 원본 객체에 영향을 주지 않는다.		
 	- Web API 중 structuredClone()를 통해 깊은 복사본을 만든 후, 원본에서 전송가능한 객체를 복사하는 대신 새로운 복사본으로 전송할 수 있다.
 		- Error와 같은 더 많은 데이터 타입의 처리를 할 수 있다.
 		- 해당 기능은 자바스크립트 고유의 기능이 아니다.
 		- 직렬화와 동일하게 직렬화할 수 없는 객체는 깊은 복사를 수행할 수 없다.
 	- 커스텀 재귀 함수를 통해 직접적으로 DFS 알고리즘을 활용하여 깊은 복사를 수행할 수 있다.
+		
 		```
 		function deepCopy(obj) {
 			if (obj === null || typeof obj !== "object") {
@@ -166,8 +176,10 @@ author: Jongwook Lee
 		console.log(obj); // { a: 1, b: { c: 2 }, func: [Function: func] }
 		console.log(obj.b.c === newObj.b.c); // false
 		```
+		
 	- Lodash 라이브러리의 cloneDeep 메소드와 같이 라이브러리를 활용하여 안전하게 깊은 복사를 할 수 있다.
 		- 설치를 해야한다는 단점은 가지고 있으나, 실무에서는 Lodash를 사용하여 깊은 복사를 많이 수행한다.
+		
 		```
 		// & npm i lodash 으로 설치
 		const lodash = require("lodash");
@@ -198,7 +210,7 @@ author: Jongwook Lee
 	- 깊은 복사는 안전하고 독립적인 복사를 제공하지만, 메모리 사용량이 더 많아진다.
 	- 얕은 복사는 메모리 사용량이 적으나, 객체의 복사가 어려울 수 있으며, 의도치 않은 결과를 유발할 수 있다.
 	
-	
+<br>	
 
 #### 2. var, let, const 를 중복 선언 허용, 스코프, 호이스팅 관점에서 서로 비교해 주세요
 - 먼저 var, let, const를 이해하기 위해서는 변수의 각 단계에 대해 알아야 한다.
@@ -223,16 +235,19 @@ author: Jongwook Lee
 - var
 	- variable의 약어로써 ES6가 등장하기 이전까지 사용하던 변수 선언 키워드 중 하나이다.
 	- var는 한번 선언된 변수를 재선언할 수 있다.
+	
 	```
 	var name = 'Mike';
 	console.log(name);
 	var name = 'Jane';
 	console.log(name);
 	```
+	
 	- var는 선언되기 전에 사용할 수 있다.
 		- var가 선언되기 전에 사용가능한 이유는 호이스팅으로 인한 변수로 이동으로 가능하다.
 		- undefined가 출력되는 이유는 선언만 호이스팅이 되기 때문이다.
 		- 자바스크립트는 바로 아래의 코드를 다음 아래의 코드 형태로 해석한다.
+		
 			```
 			console.log(name); // undefined
 			var name = 'Mike';
@@ -263,10 +278,12 @@ author: Jongwook Lee
   - let도 호이스팅이 가능하다.
 	  - var와 동일하게 선언이 맨 위로 이동되지만 초기화는 발생되지 않는다.
 	  - 또한, 선언 이전에 사용하는 경우, 아래와 같이 Reference Error가 발생된다.
+	  
 	  ```
 	   console.log(name); // Error 발생
 	   let name = 'Mike'; 
 	  ```
+	  
 	  - let에서 호이스팅이 가능하지만, var와 다르게 오류가 발생되는 이유는 TDZ(Temporary Dead Zone)으로 인해 할당되지 전까지 사용할 수 없기 때문이다.
 		- TDZ는 코드를 예측 가능하도록 만듦에 따라 잠재적인 버그를 줄이는 데 도움을 준다.
 
@@ -281,6 +298,7 @@ author: Jongwook Lee
 	- 단 const로 선언된 객체의 내부 값은 변경할 수 있다.
   - const도 호이스팅이 가능하다.
 	- let과 동일하게 선언이 맨 위로 올려지나, 초기화가 되지는 않는다.
+	
 	```
 	console.log(name); // Temporal Dead Zone
 	const name = 'Mike';
